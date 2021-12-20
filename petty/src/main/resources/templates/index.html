@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <!-- set the encoding of your site -->
+    <meta charset="utf-8">
+    <!-- set the viewport width and initial-scale on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- set the price table -->
+    <meta name="Petshop" content="yes">
+    <!-- set the HandheldFriendly -->
+    <meta name="HandheldFriendly" content="True">
+    <!-- set the price table style -->
+    <meta name="Petshop" content="black">
+    <!-- set the description -->
+    <meta name="description" content="Petshop HTML5 Template">
+    <title>PettyPe | Tienda online de Mascotas</title>
+    <!-- include the site stylesheet -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600%7CNunito:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/icon-fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- 	<script src="https://kit.fontawesome.com/bf50a48f47.js" crossorigin="anonymous"></script> -->
+</head>
+<body>
+<div id="wrapper">
+    <header id="header">
+        <div class="header-area container">
+            <div class="row">
+                <div class="col-xs-12 hidden visible-xs">
+                    <ul class="list-unstyled social-network text-center">
+                        <li><a href="mailto:contacto@pettype.tk"><i class="icon-message" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="tell:1345678000"><i class="icon-phone-call" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="icon-users" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="icon-cart" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6 hidden-xs">
+                    <ul class="list-unstyled contact-info">
+                        <li>
+                            <a href="mailto:contacto@pettype.tk" class="icon pull-left"><i class="icon-message"></i></a>
+                            <div class="align-left pull-left hidden-xs">
+                                <strong>Contacto:</strong>
+                                <a href="mailto:contacto@pettype.tk">contacto@pettype.tk</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="tell:1345678000" class="icon pull-left"><i class="icon-phone-call"></i></a>
+                            <div class="align-left pull-left hidden-xs">
+                                <strong>Contacto:</strong>
+                                <a href="tell:1345678000">(+51) 912 678 000</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6 hidden-xs">
+                    <div class="social-list">
+                        <ul class="list-unstyled social-network">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        </ul>
+                        <ul class="list-unstyled account-cart">
+                            <li>
+                                <a sec:authorize="isAuthenticated()" th:href="@{/account}"><i class="icon-users"></i><span class="hidden-xs">Cuenta</span></a>
+                                <a sec:authorize="isAnonymous()" href="/login"><i class="icon-users"></i><span class="hidden-xs">Cuenta</span></a>
+                            </li>
+                            <li><a th:href="@{/cart}"><i class="icon-cart"></i><span class="hidden-xs">Carrito</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="logo pull-left hidden visible-xs">
+                        <a href="index.html"><img class="img-responsive" src="images/logo.png" alt="PetShop"></a>
+                    </div>
+                    <a href="#" class="nav-opener pull-right hidden visible-xs"><i class="fa fa-bars"></i></a>
+
+
+                    <!-- NAVBAR -->
+
+                    <nav id="nav">
+                        <ul class="list-unstyled text-uppercase menu-left">
+                            <li><a th:href="@{/index}">INICIO</a></li>
+
+                            <li>
+                                <a href="javascript:void(0);">Menú <i class="fa fa-angle-down"></i></a>
+                                <ul class="list-unstyled text-uppercase dropdown">
+                                    <li><a th:href="@{/shop}">Tienda</a></li>
+                                    <li><a th:href="@{/cart}">Carrito</a></li>
+                                    <!--                                    <li><a href="">Checkout</a></li>-->
+                                </ul>
+                            </li>
+                            <li class="logo hidden-xs"><a th:href="@{/index}"><img class="img-responsive"
+                                                                                   src="images/logo.png"
+                                                                                   alt="PetShop"></a></li>
+                            <li class="mar-zero">
+
+                                <ul class="list-unstyled text-uppercase dropdown">
+                                    <li><a href="blog-standard.html">Blog Standard</a></li>
+                                    <li><a href="single-blog.html">Single Blog</a></li>
+                                </ul>
+                            </li>
+                            <li><a th:href="@{/contact}">Contáctanos</a></li>
+
+                        </ul>
+                    </nav>
+
+                    <!--  NAVBAR -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <section class="main-slider">
+            <div class="slide bg-full text-center overlay" style="background-image:url(images/banner.jpg);">
+                <div class="caption">
+                    <h1>Nuestras mascotas <br class="hidden-xs">están muy bien cuidadas</h1>
+                    <a th:href="@{/contact}" class="btn-primary text-uppercase text-center lg-round">contactar</a>
+                </div>
+            </div>
+        </section>
+        <section id="abt" class="abt-sec container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-7">
+                    <header class="header text-center">
+                        <h2 class="heading text-uppercase">bienvenidos a petty</h2>
+                        <span class="icon"><i class="icon-bone"></i></span>
+                        <p class="text-center">En Pettype cuidamos a nuestras mascotas como nuestros hijos y les
+                            buscamos padres responsables para su cuidado. Para la compra de alguno de nuestros
+                            engreidos, es un proceso muy estricto ya que buscamos la felicidad de nuestros amigos de
+                            cuatro patas.</p>
+                    </header>
+                    <ul class="list-unstyled icon-list text-center">
+                        <li><span class="icon round"><i class="icon-money"></i></span>
+                            <h3 class="heading2">Precios Bajos</h3></li>
+                        <li><span class="icon round"><i class="icon-atom"></i></span>
+                            <h3 class="heading2">Mascotas Saludables</h3></li>
+                        <li><span class="icon round"><i class="icon-smile"></i></span>
+                            <h3 class="heading2">Personas Felices</h3></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-5">
+                    <div class="img-holder"><img src="images/image-welcome.jpg" alt="pet-image" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="feature-sec bg-full overlay" style="background-image:url(images/banner-calidad.jpg); ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="feature-col">
+                            <span class="icon round"><i class="fa fa-ticket"></i></span>
+                            <h3 class="heading2">Soporte al cliente</h3>
+                            <p>¿Necesitas ayuda?</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="feature-col">
+                            <span class="icon round"><i class="fa fa-credit-card"></i></span>
+                            <h3 class="heading2">Compra Online</h3>
+                            <p>Rápido y Seguro</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="feature-col">
+                            <span class="icon round"><i class="fa fa-truck"></i></span>
+                            <h3 class="heading2">Delivery</h3>
+                            <p>Seguridad y Calidad</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="shop-sec container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <header class="header text-center">
+                        <h1 class="heading text-uppercase">petty tienda</h1>
+                        <span class="icon"><i class="icon-bone"></i></span>
+                    </header>
+
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a th:href="@{/shop}" class="btn-primary lg-round text-uppercase view-all">Ver todos los productos</a>
+            </div>
+        </section>
+
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="footer-logo">
+                        <a href="#"><img src="images/footer-logo.png" alt="Pet Shop" class="img-responsive"></a>
+                    </div>
+
+                    <ul class="contact-list list-unstyled">
+                        <li><span class="icon"><i class="fa fa-map-signs" aria-hidden="true"></i></span> Lima-Perú.</li>
+                        <li><a href="mailto:contacto@pettype.tk"><span class="icon"><i class="fa fa-envelope-o"
+                                                                                       aria-hidden="true"></i></span>contacto@pettype.tk</a>
+                        </li>
+                        <li><a href="#"><span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span> (+51)
+                            912 678 000 </a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 ">
+                    <h3>Newsletter</h3>
+                    <div class="newsletter">
+                        <p>Suscribete a nuestro Newsletter para recibir noticias.</p>
+                        <form class="newsletter-form" action="#">
+                            <fieldset>
+                                <input class="form-control" placeholder="Email" type="email">
+                                <button class="submit-btn round" type="submit"><i class="fa fa-arrow-right"
+                                                                                  aria-hidden="true"></i></button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<script src="js/jquery.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/jquery.main.js"></script>
+</body>
+</html>

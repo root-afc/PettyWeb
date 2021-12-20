@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <!-- set the encoding of your site -->
+    <meta charset="utf-8">
+    <!-- set the viewport width and initial-scale on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- set the price table -->
+    <meta name="Petshop" content="yes">
+    <!-- set the HandheldFriendly -->
+    <meta name="HandheldFriendly" content="True">
+    <!-- set the price table style -->
+    <meta name="Petshop" content="black">
+    <!-- set the description -->
+    <meta name="description" content="Petshop HTML5 Template">
+    <title>Petshop Checkout</title>
+    <!-- include the site stylesheet -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600%7CNunito:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/icon-fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<div id="wrapper">
+    <header id="header">
+        <div class="header-area container">
+            <div class="row">
+                <div class="col-xs-12 hidden visible-xs">
+                    <ul class="list-unstyled social-network text-center">
+                        <li><a href="mailto:contacto@pettype.tk"><i class="icon-message" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="tell:1345678000"><i class="icon-phone-call" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="icon-users" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="icon-cart" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6 hidden-xs">
+                    <ul class="list-unstyled contact-info">
+                        <li>
+                            <a href="mailto:contacto@pettype.tk" class="icon pull-left"><i class="icon-message"></i></a>
+                            <div class="align-left pull-left hidden-xs">
+                                <strong>Contacto:</strong>
+                                <a href="mailto:contacto@pettype.tk">contacto@pettype.tk</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="tell:1345678000" class="icon pull-left"><i class="icon-phone-call"></i></a>
+                            <div class="align-left pull-left hidden-xs">
+                                <strong>Contacto:</strong>
+                                <a href="tell:1345678000">(+51) 912 678 000</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6 hidden-xs">
+                    <div class="social-list">
+                        <ul class="list-unstyled social-network">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        </ul>
+                        <ul class="list-unstyled account-cart">
+                            <li>
+                                <a sec:authorize="isAuthenticated()" th:href="@{/account}"><i class="icon-users"></i><span class="hidden-xs">Cuenta</span></a>
+                                <a sec:authorize="isAnonymous()" href="/login"><i class="icon-users"></i><span class="hidden-xs">Cuenta</span></a>
+                            </li>
+                            <li><a th:href="@{/cart}"><i class="icon-cart"></i><span class="hidden-xs">Carrito</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="logo pull-left hidden visible-xs">
+                        <a href="index.html"><img class="img-responsive" src="images/logo.png" alt="PetShop"></a>
+                    </div>
+                    <a href="#" class="nav-opener pull-right hidden visible-xs"><i class="fa fa-bars"></i></a>
+
+
+                    <!-- NAVBAR -->
+
+                    <nav id="nav">
+                        <ul class="list-unstyled text-uppercase menu-left">
+                            <li><a th:href="@{/index}">INICIO</a></li>
+
+                            <li>
+                                <a href="javascript:void(0);">Menú <i class="fa fa-angle-down"></i></a>
+                                <ul class="list-unstyled text-uppercase dropdown">
+                                    <li><a th:href="@{/shop}">Tienda</a></li>
+                                    <li><a th:href="@{/cart}">Carrito</a></li>
+                                    <!--                                    <li><a href="">Checkout</a></li>-->
+                                </ul>
+                            </li>
+                            <li class="logo hidden-xs"><a th:href="@{/index}"><img class="img-responsive"
+                                                                                   src="images/logo.png"
+                                                                                   alt="PetShop"></a></li>
+                            <li class="mar-zero">
+
+                                <ul class="list-unstyled text-uppercase dropdown">
+                                    <li><a href="blog-standard.html">Blog Standard</a></li>
+                                    <li><a href="single-blog.html">Single Blog</a></li>
+                                </ul>
+                            </li>
+                            <li><a th:href="@{/contact}">Contáctanos</a></li>
+
+                        </ul>
+                    </nav>
+
+                    <!--  NAVBAR -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <section class="hero-sec bg-full" style="background-image:url(images/paym.jpg);">
+            <div class="caption">
+                <h1 class="heading text-center" style="color: rgba(26,67,203,0.47); font-weight: bold">Checkout</h1>
+            </div>
+        </section>
+        <section class="check-sec container">
+            <!--<div class="row">
+                <div class="col-xs-12">
+                    <div class="txt-wrap">
+                        <p>Returning customer? <a href="#">Click here to login</a></p>
+                    </div>
+                    <div class="txt-wrap">
+                        <p>Have a coupon? <a href="#">Click here to enter your code</a></p>
+                    </div>
+                </div>
+            </div>-->
+            <!--<div class="row">
+                <div class="col-xs-12">
+                    <form class="checkout-form text-left" action="#">
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6">
+                                    <h2>Billing Details</h2>
+                                    <div class="form-group">
+                                        <div class="holder">
+                                            <div class="col">
+                                                <label>First Name <span class="sign">*</span></label>
+                                                <input class="form-control element-block" placeholder="" type="text">
+                                            </div>
+                                            <div class="col">
+                                                <label>Last Name<span class="sign">*</span></label>
+                                                <input class="form-control element-block" placeholder="" type="text">
+                                            </div>
+                                        </div>
+                                        <label>Company Name<span class="sign">*</span></label>
+                                        <input class="form-control " placeholder="" type="text">
+                                        <label>Address 1<span class="sign">*</span></label>
+                                        <input class="form-control" placeholder="" type="text">
+                                        <label>Address 2 [optional}</label>
+                                        <input class="form-control" placeholder="" type="text">
+                                        <div class="holder">
+                                            <div class="col">
+                                                <label>Email Address<span class="sign">*</span></label>
+                                                <input class="form-control element-block" placeholder="" type="text">
+                                            </div>
+                                            <div class="col">
+                                                <label>Phone<span class="sign">*</span></label>
+                                                <input class="form-control element-block" placeholder="" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="holder">
+                                            <div class="col">
+                                                <label>Town/City<span class="sign">*</span></label>
+                                                <input class="form-control element-block" placeholder="" type="text">
+                                            </div>
+                                            <div class="col">
+                                                <label>Pin code/Zip<span class="sign">*</span></label>
+                                                <input class="form-control element-block" placeholder="" type="text">
+                                            </div>
+                                        </div>
+                                        <label>Country<span class="sign">*</span></label>
+                                        <select class="form-control">
+                                            <option value="0">United States</option>
+                                            <option value="1">United States</option>
+                                            <option value="2">United States</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="checkbox">
+                                        <span class="check-holder">Create an Account?</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6">
+                                    <h2>Additional Info</h2>
+                                    <div class="form-group">
+                                        <label>Other Notes</label>
+                                        <textarea class="form-control"
+                                                  placeholder="Notes about your order, e.g: your delivery"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>-->
+            <div class="row">
+                <div class="col-xs-12">
+                    <table class="table table-bordered">
+                        <caption>Detalle orden:</caption>
+                        <thead>
+                        <tr>
+                            <th>Productos</th>
+                            <th>Total</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="p : ${listProducts}">
+                            <td th:text="${p.nombre} + ' ' +${p.cantidad} + 'x'" ></td>
+                            <td th:text="${p.subTotal}"></td>
+                        </tr>
+
+
+                        <tr class="total">
+                            <td>Total</td>
+                            <td class="clr" th:text="${total}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="payment-holder">
+                        <h2>Finalizar orden...</h2>
+                        <form class="payment-form" action="#" method="post" th:action="@{/payments/save}">
+
+                            <input type="submit" value="Ordenar" class="text-uppercase submit-btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--<section class="callout" style="background-image:url(https://via.placeholder.com/1920x90);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <h2>Get 50% offer for all pet products</h2>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <a class="btn-primary text-uppercase text-center lg-round" href="#">coupon code : PETTY1234</a>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="footer-logo">
+                        <a href="#"><img src="images/footer-logo.png" alt="Pet Shop" class="img-responsive"></a>
+                    </div>
+
+                    <ul class="contact-list list-unstyled">
+                        <li><span class="icon"><i class="fa fa-map-signs" aria-hidden="true"></i></span> Lima-Perú.</li>
+                        <li><a href="mailto:contacto@pettype.tk"><span class="icon"><i class="fa fa-envelope-o"
+                                                                                       aria-hidden="true"></i></span>contacto@pettype.tk</a>
+                        </li>
+                        <li><a href="#"><span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span> (+51)
+                            912 678 000 </a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 ">
+                    <h3>Newsletter</h3>
+                    <div class="newsletter">
+                        <p>Suscribete a nuestro Newsletter para recibir noticias.</p>
+                        <form class="newsletter-form" action="#">
+                            <fieldset>
+                                <input class="form-control" placeholder="Email" type="email">
+                                <button class="submit-btn round" type="submit"><i class="fa fa-arrow-right"
+                                                                                  aria-hidden="true"></i></button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/jquery.main.js"></script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <!-- set the encoding of your site -->
+    <meta charset="utf-8">
+    <!-- set the viewport width and initial-scale on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- set the price table -->
+    <meta name="Petshop" content="yes">
+    <!-- set the HandheldFriendly -->
+    <meta name="HandheldFriendly" content="True">
+    <!-- set the price table style -->
+    <meta name="Petshop" content="black">
+    <!-- set the description -->
+    <meta name="description" content="Petshop HTML5 Template">
+    <title>Petshop Cart</title>
+    <!-- include the site stylesheet -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600%7CNunito:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/icon-fonts.css">
+    <link rel="stylesheet" type="text/css" href="/css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<div id="wrapper">
+    <header id="header">
+        <div class="header-area container">
+            <div class="row">
+                <div class="col-xs-12 hidden visible-xs">
+                    <ul class="list-unstyled social-network text-center">
+                        <li><a href="mailto:contacto@pettype.tk"><i class="icon-message" aria-hidden="true"></i></a>
+                        </li>
+                        <li><a href="tell:1345678000"><i class="icon-phone-call" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="icon-users" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="icon-cart" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6 hidden-xs">
+                    <ul class="list-unstyled contact-info">
+                        <li>
+                            <a href="mailto:contacto@pettype.tk" class="icon pull-left"><i class="icon-message"></i></a>
+                            <div class="align-left pull-left hidden-xs">
+                                <strong>Contacto:</strong>
+                                <a href="mailto:contacto@pettype.tk">contacto@pettype.tk</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="tell:1345678000" class="icon pull-left"><i class="icon-phone-call"></i></a>
+                            <div class="align-left pull-left hidden-xs">
+                                <strong>Contacto:</strong>
+                                <a href="tell:1345678000">(+51) 912 678 000</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6 hidden-xs">
+                    <div class="social-list">
+                        <ul class="list-unstyled social-network">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        </ul>
+                        <ul class="list-unstyled account-cart">
+                            <li>
+                                <a sec:authorize="isAuthenticated()" th:href="@{/account}"><i class="icon-users"></i><span class="hidden-xs">Cuenta</span></a>
+                                <a sec:authorize="isAnonymous()" href="/login"><i class="icon-users"></i><span class="hidden-xs">Cuenta</span></a>
+                            </li>
+                            <li><a th:href="@{/cart}"><i class="icon-cart"></i><span class="hidden-xs">Carrito</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="logo pull-left hidden visible-xs">
+                        <a href="index.html"><img class="img-responsive" src="images/logo.png" alt="PetShop"></a>
+                    </div>
+                    <a href="#" class="nav-opener pull-right hidden visible-xs"><i class="fa fa-bars"></i></a>
+
+
+                    <!-- NAVBAR -->
+
+                    <nav id="nav">
+                        <ul class="list-unstyled text-uppercase menu-left">
+                            <li><a th:href="@{/index}">INICIO</a></li>
+
+                            <li>
+                                <a href="javascript:void(0);">Menú <i class="fa fa-angle-down"></i></a>
+                                <ul class="list-unstyled text-uppercase dropdown">
+                                    <li><a th:href="@{/shop}">Tienda</a></li>
+                                    <li><a th:href="@{/cart}">Carrito</a></li>
+                                    <!--                                    <li><a href="">Checkout</a></li>-->
+                                </ul>
+                            </li>
+                            <li class="logo hidden-xs"><a th:href="@{/index}"><img class="img-responsive"
+                                                                                   src="images/logo.png"
+                                                                                   alt="PetShop"></a></li>
+                            <li class="mar-zero">
+
+                                <ul class="list-unstyled text-uppercase dropdown">
+                                    <li><a href="blog-standard.html">Blog Standard</a></li>
+                                    <li><a href="single-blog.html">Single Blog</a></li>
+                                </ul>
+                            </li>
+                            <li><a th:href="@{/contact}">Contáctanos</a></li>
+
+                        </ul>
+                    </nav>
+
+                    <!--  NAVBAR -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <section class="hero-sec bg-full" style="background-image:url(images/cart-tw.jpg);">
+            <div class="caption">
+                <h1 class="heading text-center">Cart</h1>
+            </div>
+        </section>
+        <section class="cart-content-block container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="table-responsive">
+                        <table class="table cart-data-table">
+                            <thead>
+                            <tr>
+                                <th class="Product text-center">Productos</th>
+                                <th class="price text-center">Precio</th>
+                                <th class="Quantity text-center">Cantidad</th>
+                                <th class="Total text-center">Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <!-- PRODUCT CODE  -->
+
+                            <tr th:each="p : ${listProducts}">
+                                <div>
+                                    <form action="#" method="post" name="execq"
+                                          th:action="@{/cart/delete/{idproducto} (idproducto = ${p.idproducto})}">
+                                        <td class="Product">
+                                            <a href="javascript:void(0)" onclick="document.forms['execq'].submit()"
+                                               class="btn-remove fa fa-times"></a>
+                                            <div class="img-holder">
+                                                <img style="max-width: 100%;" th:src="${p.foto_url}"
+                                                     alt="image description"
+                                                     class="img-resposnive">
+                                            </div>
+                                            <span class="descr-wrap" th:text="${p.nombre}"></span>
+                                        </td>
+                                        <td class="price"><span><strong class="price element-block"
+                                                                        th:text="${p.precioCompra}"></strong></span>
+                                        </td>
+                                        <td class="Quantity">
+                                            <input type="number" class="form-control text-center" disabled min="0"
+                                                   th:value="${p.cantidad}">
+                                        </td>
+                                        <td class="Total"><strong class="element-block price"
+                                                                  th:text="${p.subTotal}"></strong></td>
+                                    </form>
+                                </div>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+              <!--  <div class="col-xs-12 coupon-wrap">
+                    <div class="coupon-code pull-left">
+                        <input class="form-control" placeholder="Coupon Code" type="text">
+                        <button type="submit" class="btn-primary text-center text-uppercase  pull-right">apply code
+                        </button>
+                    </div>
+                    <a href="#" class="btn-primary updatebtn text-center text-uppercase pull-right">update cart</a>
+                </div>-->
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="table-wrap pull-right">
+
+                          <h2>Total carrito</h2>
+                          <ul class="list-unstyled cart-total">
+                            <!--  <li>
+                                  <strong class="title pull-left">Sub-Total</strong>
+                                  <strong class="price pull-right">$74.00</strong>
+                              </li>-->
+                              <li>
+                                  <strong class="title pull-left">Total</strong>
+                                  <strong class="price pull-right" th:text="${total}"></strong>
+                              </li>
+                          </ul>
+                          <a th:href="@{/checkout}" class="btn-primary text-center text-uppercase">Continuar con la compra</a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+       <!-- <section class="callout" style="background-image:url(https://via.placeholder.com/1920x90);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <h2>Get 50% offer for all pet products</h2>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <a class="btn-primary text-uppercase text-center lg-round" href="#">coupon code : PETTY1234</a>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="footer-logo">
+                        <a href="#"><img src="images/footer-logo.png" alt="Pet Shop" class="img-responsive"></a>
+                    </div>
+
+                    <ul class="contact-list list-unstyled">
+                        <li><span class="icon"><i class="fa fa-map-signs" aria-hidden="true"></i></span> Lima-Perú.</li>
+                        <li><a href="mailto:contacto@pettype.tk"><span class="icon"><i class="fa fa-envelope-o"
+                                                                                       aria-hidden="true"></i></span>contacto@pettype.tk</a>
+                        </li>
+                        <li><a href="#"><span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span> (+51)
+                            912 678 000 </a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 ">
+                    <h3>Newsletter</h3>
+                    <div class="newsletter">
+                        <p>Suscribete a nuestro Newsletter para recibir noticias.</p>
+                        <form class="newsletter-form" action="#">
+                            <fieldset>
+                                <input class="form-control" placeholder="Email" type="email">
+                                <button class="submit-btn round" type="submit"><i class="fa fa-arrow-right"
+                                                                                  aria-hidden="true"></i></button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/jquery.main.js"></script>
+</body>
+</html>
